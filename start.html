@@ -8,20 +8,39 @@
 
 </head>
 <body>
-    <div class="title">
-        <h1>
-            Travel Cat
-        </h1>
-    </div>
-    <br>
-
     <nav>
-            <img src="images/cat.jpg" alt="image of a cat" width="50">
-            <h1>test</h1>
-            <a href="./homepage.html">Homepage</a>&nbsp;&nbsp;&nbsp;
-            <a href="./page/cityslist.html">Citys</a>&nbsp;&nbsp;&nbsp;
-            <a href="./page/about.html">About</a>&nbsp;&nbsp;&nbsp;
-            <a href="./page/contact.html">Contact</a>
+        <dev>
+            <img src="images/WebLogo.png" alt="image of a WebLogo" width="50">
+        </dev>
+        <dev>
+            <form action="processing-script.php" method="GET">
+                <input name="search" name="search" placeholder="Search">
+            </form>
+        </dev>
+        <dev>
+            <a href="./homepage.html">Home</a>
+            <a href="./page/cityslist.html">Citys</a>
+            <a href="./page/about.html">About</a>           
+        </dev>
+        <dev>
+            <button id="openLogin">Login</button>
+            <!-- ※ ※ ※  login的图标需要做成下划线式而不是按钮式，需要在CSS完成 -->
+            <!-- <button id="openSignUp">Sign up</button> -->
+            <!-- ※ ※ ※  login和signup需不需要分开做？？ -->
+
+            <dialog id="loginDialog">
+                <form action="processing-script.php" method="POST" >
+                    <h3>Login</h3>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <div>
+                        <button type="submit">Sign in</button>
+                        <button type="button" id="closeLogin">Cancel</button>
+                    </div>
+                </form>
+            </dialog>
+
+        </dev>
     </nav>
     
     <figure class="zim-figure">
