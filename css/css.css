@@ -1,0 +1,7 @@
+.grid-bg{
+  min-height:600px;
+  width:"pxwidth=device-width";
+  background-color:#d8ffd7;
+  padding:16px;
+  border-radius: 20px;
+}

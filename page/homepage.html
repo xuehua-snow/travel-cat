@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Cat</title>
-    <link rel="icon" type="jpg" href="./images/cat.jpg">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="jpg" href="./images/cat.jpg">
+  <title>Travel Cat</title>
 
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { width: 800px; height: 600px; }
+  </style>
 </head>
+
 <body>
-    <nav>
+  <nav>
         <dev>
-            <img src="images/WebLogo.png" alt="image of a WebLogo" width="50">
+            <img src="../images/WebLogo.png" alt="image of a WebLogo" width="50">
         </dev>
         <dev>
             <form action="processing-script.php" method="GET">
@@ -42,37 +49,38 @@
 
         </dev>
     </nav>
-    
-    <figure class="zim-figure">
-        <canvas id="zimCanvas" width="800" height="450"></canvas>
-        <figcaption>(Cat Area)</figcaption>
-    </figure>
+  
+  <div id="map"></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiaDg2OTY2MTM2OCIsImEiOiJjbWgweXdiYXIyam4zMmpxMm4xdzVxdDZ3In0.ss474gDeBh40T0_8FFKw2A';
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v12', // 样式ID
+      center: [-79.3832, 43.6532], // 多伦多坐标
+      zoom: 12
+    });
 
-    <!-- -------------------zimjs.com - JavaScript Canvas Framework-------------------------- -->
-    <script type="module" src="./js/canvas.js">
-    // <script type="module">
-        // import zim from "https://zimjs.org/cdn/018/zim";
-        // // See Docs under Frame for FIT, FILL, FULL, and TAG
-        // new Frame("zimCanvas", 1200, 500, "rgb(245, 180, 142)", white, ready);
-        // function ready() {
-        //                 new Circle(100, purple)
-        //                     .center()
-        //                     .drag();
-        //                 } 
+    // 添加缩放控件
+    map.addControl(new mapboxgl.NavigationControl());
 
-    </script>
-    <!-- -------------------zimjs.com - JavaScript Canvas Framework-------------------------- -->
+    // 添加标记
+    new mapboxgl.Marker().setLngLat([-79.3832, 43.6532]).addTo(map);
+  </script>
 
+  <div>
+    <button id="openShop">Shop</button>
+    <button id="openWeather">Weather</button>
+    <button id="openHotels">Hotels</button>
+  </div>
 
-
-    <div class = "citys">
+  <div class = "citys">
         <h2>Citys</h2>
         
         <div class = "Industry">
             <div>
                 <h3>[Content to be replaced]</h3>
                 <p>[Content to be replaced]Weather:Rain</p>
-                <img src="./images/manga.png" alt="image of City" width="500">
+                <!-- <img src="./images/manga.png" alt="image of City" width="500"> -->
                 <p>
                     History:[Content to be replaced]Toronto was founded as the Town of York and capital of Upper Canada in 1793 after the Mississaugas sold the land to the British in the Toronto Purchase.[1] For over 12,000 years, Indigenous People have lived in the Toronto area. The ancestors of the Huron-Wendat were the first known groups to establish agricultural villages in the area about 1,600 years ago.[2]
                 </p>
@@ -82,7 +90,7 @@
             <div>
                 <h3>[Content to be replaced]</h3>
                 <p>[Content to be replaced]Weather:Rain</p>
-                <img src="./images/manga.png" alt="image of City" width="500">
+                <!-- <img src="./images/manga.png" alt="image of City" width="500"> -->
                 <p>
                     History:[Content to be replaced]Toronto was founded as the Town of York and capital of Upper Canada in 1793 after the Mississaugas sold the land to the British in the Toronto Purchase.[1] For over 12,000 years, Indigenous People have lived in the Toronto area. The ancestors of the Huron-Wendat were the first known groups to establish agricultural villages in the area about 1,600 years ago.[2]
                 </p>
@@ -106,6 +114,6 @@
         
     </footer>
 
-    <script src = "js/main.js"></script>
+    <script src = "../js/main.js"></script>
 </body>
 </html>
