@@ -10,8 +10,8 @@
 
 </head>
 <body>
-    <nav>
-        <dev>
+    <nav class = "nav">
+        <dev class = "left">
             <img src="images/WebLogo.png" alt="image of a WebLogo" width="50">
         </dev>
         <dev>
@@ -24,7 +24,7 @@
             <a href="./page/cityslist.html">Citys</a>
             <a href="./page/about.html">About</a>           
         </dev>
-        <dev>
+        <dev class = "right">
             <button id="openLogin">Login</button>
             <!-- ※ ※ ※  login的图标需要做成下划线式而不是按钮式，需要在CSS完成 -->
             <!-- <button id="openSignUp">Sign up</button> -->
@@ -46,7 +46,8 @@
     </nav>
     
     <main class="grid-bg">
-        <h2>Travel cat</h2>
+        <div class = "left">
+            <h2>Travel cat</h2>
         <p>
             Your curious cat, your world of wonders.
         </p>
@@ -54,7 +55,9 @@
             Exploring the world with kittens through food, clothing, accommodation and transportation.
         </p>
         <a href="./page/homepage.html">Get Start</a>
-        <img src="images/startPic.png" alt="image of a WebLogo" width="600">
+        </div>
+        
+        <img class = "right" src="images/startPic.png" alt="image of a WebLogo" width="600">
     </main>
        
 

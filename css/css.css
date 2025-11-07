@@ -4,4 +4,18 @@
   background-color:#d8ffd7;
   padding:16px;
   border-radius: 20px;
+  display: flex;
+}
+
+.mapArea{
+  display: flex;
+}
+
+.nav{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.right{
+  margin-left: auto;
 }

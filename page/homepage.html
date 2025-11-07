@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" type="jpg" href="./images/cat.jpg">
+  <link rel="stylesheet" href="../css/css.css" />
   <title>Travel Cat</title>
 
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
@@ -15,7 +16,7 @@
 </head>
 
 <body>
-  <nav>
+  <nav class = "nav">
         <dev>
             <img src="../images/WebLogo.png" alt="image of a WebLogo" width="50">
         </dev>
@@ -29,7 +30,7 @@
             <a href="./page/cityslist.html">Citys</a>
             <a href="./page/about.html">About</a>           
         </dev>
-        <dev>
+        <dev class = "right">
             <button id="openLogin">Login</button>
             <!-- ※ ※ ※  login的图标需要做成下划线式而不是按钮式，需要在CSS完成 -->
             <!-- <button id="openSignUp">Sign up</button> -->
@@ -49,59 +50,63 @@
 
         </dev>
     </nav>
-  
-  <div id="map"></div>
-  <script>
-    mapboxgl.accessToken = 'pk.eyJ1IjoiaDg2OTY2MTM2OCIsImEiOiJjbWgweXdiYXIyam4zMmpxMm4xdzVxdDZ3In0.ss474gDeBh40T0_8FFKw2A';
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v12', // 样式ID
-      center: [-79.3832, 43.6532], // 多伦多坐标
-      zoom: 12
-    });
 
-    // 添加缩放控件
-    map.addControl(new mapboxgl.NavigationControl());
+    <main class = "mapArea">
+        <div id="map"></div>
+            <script>
+                mapboxgl.accessToken = 'pk.eyJ1IjoiaDg2OTY2MTM2OCIsImEiOiJjbWgweXdiYXIyam4zMmpxMm4xdzVxdDZ3In0.ss474gDeBh40T0_8FFKw2A';
+                const map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v12', // 样式ID
+                center: [-79.3832, 43.6532], // 多伦多坐标
+                zoom: 12
+                });
 
-    // 添加标记
-    new mapboxgl.Marker().setLngLat([-79.3832, 43.6532]).addTo(map);
-  </script>
+                // 添加缩放控件
+                map.addControl(new mapboxgl.NavigationControl());
 
-  <div>
-    <button id="openShop">Shop</button>
-    <button id="openWeather">Weather</button>
-    <button id="openHotels">Hotels</button>
-  </div>
+                // 添加标记
+                new mapboxgl.Marker().setLngLat([-79.3832, 43.6532]).addTo(map);
+            </script>
 
-  <div class = "citys">
-        <h2>Citys</h2>
-        
-        <div class = "Industry">
-            <div>
-                <h3>[Content to be replaced]</h3>
-                <p>[Content to be replaced]Weather:Rain</p>
-                <!-- <img src="./images/manga.png" alt="image of City" width="500"> -->
-                <p>
-                    History:[Content to be replaced]Toronto was founded as the Town of York and capital of Upper Canada in 1793 after the Mississaugas sold the land to the British in the Toronto Purchase.[1] For over 12,000 years, Indigenous People have lived in the Toronto area. The ancestors of the Huron-Wendat were the first known groups to establish agricultural villages in the area about 1,600 years ago.[2]
-                </p>
-                <p><a href="./cityspage/templatepage.html">More</a></p>
-            </div>
-
-            <div>
-                <h3>[Content to be replaced]</h3>
-                <p>[Content to be replaced]Weather:Rain</p>
-                <!-- <img src="./images/manga.png" alt="image of City" width="500"> -->
-                <p>
-                    History:[Content to be replaced]Toronto was founded as the Town of York and capital of Upper Canada in 1793 after the Mississaugas sold the land to the British in the Toronto Purchase.[1] For over 12,000 years, Indigenous People have lived in the Toronto area. The ancestors of the Huron-Wendat were the first known groups to establish agricultural villages in the area about 1,600 years ago.[2]
-                </p>
-                <p><a href="./cityspage/templatepage.html">More</a></p>
-            </div>
-            
+        <div>
+            <button id="openShop">Shop</button>
+            <button id="openWeather">Weather</button>
+            <button id="openHotels">Hotels</button>
         </div>
-        <br>
+    </main>
+  
+    
+
+    <div class = "citys">
+        <h2>Citys</h2>
+            
+            <div class = "Industry">
+                <div>
+                    <h3>[Content to be replaced]</h3>
+                    <p>[Content to be replaced]Weather:Rain</p>
+                    <!-- <img src="./images/manga.png" alt="image of City" width="500"> -->
+                    <p>
+                        History:[Content to be replaced]Toronto was founded as the Town of York and capital of Upper Canada in 1793 after the Mississaugas sold the land to the British in the Toronto Purchase.[1] For over 12,000 years, Indigenous People have lived in the Toronto area. The ancestors of the Huron-Wendat were the first known groups to establish agricultural villages in the area about 1,600 years ago.[2]
+                    </p>
+                    <p><a href="./cityspage/templatepage.html">More</a></p>
+                </div>
+
+                <div>
+                    <h3>[Content to be replaced]</h3>
+                    <p>[Content to be replaced]Weather:Rain</p>
+                    <!-- <img src="./images/manga.png" alt="image of City" width="500"> -->
+                    <p>
+                        History:[Content to be replaced]Toronto was founded as the Town of York and capital of Upper Canada in 1793 after the Mississaugas sold the land to the British in the Toronto Purchase.[1] For over 12,000 years, Indigenous People have lived in the Toronto area. The ancestors of the Huron-Wendat were the first known groups to establish agricultural villages in the area about 1,600 years ago.[2]
+                    </p>
+                    <p><a href="./cityspage/templatepage.html">More</a></p>
+                </div>
+                
+            </div>
+            <br>
        
 
-
+    </div>
 
     <footer>
         <div>
